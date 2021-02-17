@@ -9,6 +9,50 @@
 <body>
     <div id="content">
 
+        <div id="form-container">
+
+            <form id="settings">
+
+                <div class="input-row">
+                    <label for="character-wpm">Character WPM</label>
+                    <input name="character-wpm" type="range" min="10" max="40" step="1">
+                    <output for="character-wpm"></output>
+                </div>
+
+                <div class="input-row">
+                    <label for="effective-wpm">Effective WPM</label>
+                    <input name="effective-wpm" type="range" min="10" max="40" step="1">
+                    <output for="effective-wpm"></output>
+                </div>
+
+                <div class="input-row">
+                    <label for="word-spacing">Extra Word Spacing</label>
+                    <input name="word-spacing" type="range" min="0" max="5" step="1">
+                    <output for="word-spacing"></output>
+                </div>
+
+                <div class="input-row">
+                    <label for="tone">Tone (Hz)</label>
+                    <input name="tone" type="range" min="400" max="1000" step="10">
+                    <output for="tone"></output>
+                </div>
+
+                <div class="input-row">
+                    <label for="start-delay">Start delay (seconds)</label>
+                    <input name="start-delay" type="range" min="0" max="5" step="1">
+                    <output for="start-delay"></output>
+                </div>
+
+                <div class="input-row">
+                    <label for="group-length">Group Length</label>
+                    <input name="group-length" type="range" min="1" max="7" step="1">
+                    <output for="group-length"></output>
+                </div>
+
+            </form>
+
+        </div>
+
     </div>   
 </body>
 </html>
