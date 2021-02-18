@@ -1,3 +1,19 @@
 * {
     font-family: Verdana, Arial, Helvetica, sans-serif;
 }
+
+.input-row {
+    display: flex;
+    justify-content: space-between;
+
+    width: 50vw;
+    margin: 1rem auto;
+}
+
+.input-row label, .input-row input, .input-row output {
+    width: 30%;
+}
+
+.input-row label {
+    text-align: right;
+}
