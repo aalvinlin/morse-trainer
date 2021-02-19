@@ -2,6 +2,18 @@
     font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* settings */
+
+#settings {
+    margin: 2rem auto;
+}
+
 .input-row {
     display: flex;
     justify-content: space-between;
