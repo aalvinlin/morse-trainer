@@ -1,3 +1,16 @@
+const setSettings = settings => {
+
+    for (let option in settings)
+        {
+            // set value on input slider
+            document.getElementsByName(option)[0].value = settings[option];
+
+            // set output display value
+            document.getElementsByName(option + "Display")[0].value = settings[option];
+        }
+
+}
+
 // initialize settings upon page load
 const defaultSettings = {
     characterWpm: 20,
@@ -8,11 +21,6 @@ const defaultSettings = {
     groupLength: 5
 }
 
-for (let option in defaultSettings)
-    {
-        // set value on input slider
-        document.getElementsByName(option)[0].value = defaultSettings[option];
+const currentSettings = {...defaultSettings};
 
-        // set output display value
-        document.getElementsByName(option + "Display")[0].value = defaultSettings[option];
-    }
+setSettings(currentSettings);
