@@ -24,3 +24,12 @@ const defaultSettings = {
 const currentSettings = {...defaultSettings};
 
 setSettings(currentSettings);
+
+// create CW player
+
+// remove groupLength before passing into CW player
+const {groupLength, ...playerSettings} = currentSettings;
+
+const cwPlayer = new jscw(currentSettings);
+cwPlayer.setText("one two three four five six seven eight nine ten");
+cwPlayer.renderPlayer('cwPlayer', cwPlayer);
