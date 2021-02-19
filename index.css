@@ -17,3 +17,12 @@
 .input-row label {
     text-align: right;
 }
+
+.input-row input {
+    width: 50%;
+}
+
+.input-row output {
+    width: 10%;
+    text-align: center;
+}
