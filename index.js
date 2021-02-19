@@ -13,10 +13,10 @@ const setSettings = settings => {
 
 // initialize settings upon page load
 const defaultSettings = {
-    characterWpm: 20,
-    effectiveWpm: 20,
-    wordSpacing: 0,
-    tone: 700,
+    wpm: 20,
+    eff: 20,
+    ews: 0,     // extra word spacing
+    freq: 700,
     startDelay: 0,
     groupLength: 5
 }
