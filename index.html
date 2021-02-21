@@ -56,6 +56,49 @@
 
         </div>
 
+        <div class="input-type-selection">
+            <button name="inputTypeText" id="inputTypeText">Add Text</button>
+            <button name="inputTypeGenerated" id="inputTypeGenerated">Generate Characters</button>
+        </div>
+
+        <div class="input-settings-container">
+
+            <div class="input-settings-text">
+
+                <label for="inputTextTextarea">Text to convert:</label>
+                <textarea name="inputTextTextarea"></textarea>
+
+            </div>
+
+            <div class="input-settings-generated">
+
+                <div class="input-settings-generated-row">
+                    <div class="input-option">
+                        <label for="characterSelection">Characters to use:</label>
+                        <input name="characterSelection" id="characterSelection" type="text"></input>
+                    </div>
+
+                    <div class="input-option">
+                        <label for="characterWeights">Weights (0-100, starting with last character):</label>
+                        <input name="characterWeights" id="characterWeights" type="text"></input>
+                    </div>
+                </div>
+                
+                <div class="input-settings-generated-row">
+                    <div class="input-option">
+                        <button name="totalCharactersButton" id="totalCharactersButton">Total characters</button>
+                        <input name="totalCharacters" id="totalCharacters" type="number"></input>
+                    </div>
+
+                    <div class="input-option">
+                        <button name="totalTimeButton" id="totalTimeButton">Seconds</button>
+                        <input name="totalTime" id="totalTime" type="number"></input>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
         <div id="cwPlayer"></div>
 
     </div>   
