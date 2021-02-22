@@ -64,13 +64,13 @@
     min-height: 10vh;
 }
 
-.input-text, .input-settings-generated {
+.input-text, .input-generated {
     display: flex;
     flex-direction: column;
     height: 20vh;
 }
 
-.input-settings-generated-row {
+.input-generated-row {
     display: flex;
     justify-content: space-between;
 }
