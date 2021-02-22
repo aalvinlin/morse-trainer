@@ -85,4 +85,21 @@ const createCWPlayer = settings => {
     cwPlayer.renderPlayer('cwPlayer', cwPlayer);    
 }
 
+// add events for buttons
+let inputType = "text";
+
+const setInputType = selection => {
+
+    inputType = selection;
+
+    document.getElementsByClassName("input-text")[0].style.display = "none";
+    document.getElementsByClassName("input-generated")[0].style.display = "none";
+
+    document.getElementsByClassName("input-" + selection)[0].style.display = "flex";
+}
+
+document.getElementById("inputTypeText").addEventListener("click", () => setInputType("text"));
+document.getElementById("inputTypeGenerated").addEventListener("click", () => setInputType("generated"));
+
+
 createCWPlayer(currentSettings);
