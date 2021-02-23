@@ -12,18 +12,21 @@ const setSettings = settings => {
 }
 
 // initialize settings upon page load
-const defaultSettings = {
+const defaultPlayerSettings = {
     wpm: 20,
     eff: 20,
     ews: 0,     // extra word spacing
     freq: 700,
-    startDelay: 0,
-    groupLength: 5
+    startDelay: 0
 }
 
-const currentSettings = {...defaultSettings};
+const defaultAppSettings = {
+    groupLength: 5,
+}
 
-setSettings(currentSettings);
+const currentPlayerSettings = {...defaultPlayerSettings};
+
+setSettings(currentPlayerSettings);
 
 // Fisher-Yates Shuffle: https://stackoverflow.com/a/12646864
 const shuffle = array => {
@@ -102,4 +105,4 @@ document.getElementById("inputTypeText").addEventListener("click", () => setInpu
 document.getElementById("inputTypeGenerated").addEventListener("click", () => setInputType("generated"));
 
 
-createCWPlayer(currentSettings);
+createCWPlayer(currentPlayerSettings);
