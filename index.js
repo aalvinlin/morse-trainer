@@ -22,6 +22,12 @@ const defaultPlayerSettings = {
 
 const defaultAppSettings = {
     groupLength: 5,
+    
+    inputType: "text",
+    characterSelection: [],
+    characterWeights = [],
+    totalCharacters: 100,
+    totalTime: 30
 }
 
 const currentPlayerSettings = {...defaultPlayerSettings};
