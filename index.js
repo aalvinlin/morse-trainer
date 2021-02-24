@@ -110,5 +110,8 @@ const setInputType = selection => {
 document.getElementById("inputTypeText").addEventListener("click", () => setInputType("text"));
 document.getElementById("inputTypeGenerated").addEventListener("click", () => setInputType("generated"));
 
+// add events for input fields
+document.getElementById("textToConvert").addEventListener("input", () => {});
+
 
 createCWPlayer(currentPlayerSettings);
