@@ -24,8 +24,9 @@ const defaultAppSettings = {
     groupLength: 5,
     
     inputType: "text",
+    textToConvert: "",
     characterSelection: [],
-    characterWeights = [],
+    characterWeights: [],
     totalCharacters: 100,
     totalTime: 30
 }
@@ -111,7 +112,10 @@ document.getElementById("inputTypeText").addEventListener("click", () => setInpu
 document.getElementById("inputTypeGenerated").addEventListener("click", () => setInputType("generated"));
 
 // add events for input fields
-document.getElementById("textToConvert").addEventListener("input", () => {});
+const updateAppSettings = event => {
+    defaultAppSettings[event.target.name] = event.target.value;
+}
 
+document.getElementById("textToConvert").addEventListener("input", updateAppSettings);
 
 createCWPlayer(currentPlayerSettings);
