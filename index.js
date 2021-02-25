@@ -104,8 +104,6 @@ const setInputType = selection => {
     document.getElementsByClassName("input-generated")[0].style.display = "none";
 
     document.getElementsByClassName("input-" + selection)[0].style.display = "flex";
-
-    console.log("udpated!", defaultAppSettings);
 }
 
 document.getElementById("inputTypeText").addEventListener("click", () => setInputType("text"));
