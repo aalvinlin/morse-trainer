@@ -112,10 +112,14 @@ document.getElementById("inputTypeText").addEventListener("click", () => setInpu
 document.getElementById("inputTypeGenerated").addEventListener("click", () => setInputType("generated"));
 
 // add events for input fields
-const updateAppSettings = event => {
-    defaultAppSettings[event.target.name] = event.target.value;
+const updateAppSettings = (event, callback) => {
+    defaultAppSettings[event.target.name] = callback(event.target.value);
 }
 
-document.getElementById("textToConvert").addEventListener("input", updateAppSettings);
+document.getElementById("textToConvert").addEventListener("input", event => updateAppSettings(event, text => text));
+document.getElementById("characterSelection").addEventListener("input", event => updateAppSettings(event, text => text.split("")));
+document.getElementById("characterWeights").addEventListener("input", event => updateAppSettings(event, text => text.split(" ").map(n => parseInt(n))));
+document.getElementById("totalCharacters").addEventListener("input", event => updateAppSettings(event, parseInt));
+document.getElementById("totalTime").addEventListener("input", event => updateAppSettings(event, parseInt));
 
 createCWPlayer(currentPlayerSettings);
