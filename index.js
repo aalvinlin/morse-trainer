@@ -96,16 +96,16 @@ const createCWPlayer = settings => {
 }
 
 // add events for buttons
-let inputType = "text";
-
 const setInputType = selection => {
 
-    inputType = selection;
+    defaultAppSettings.inputType = selection;
 
     document.getElementsByClassName("input-text")[0].style.display = "none";
     document.getElementsByClassName("input-generated")[0].style.display = "none";
 
     document.getElementsByClassName("input-" + selection)[0].style.display = "flex";
+
+    console.log("udpated!", defaultAppSettings);
 }
 
 document.getElementById("inputTypeText").addEventListener("click", () => setInputType("text"));
