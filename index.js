@@ -1,5 +1,7 @@
 const setSettings = settings => {
 
+    settings = {...settings, "groupLength": defaultAppSettings.groupLength};
+
     for (let option in settings)
         {
             // set value on input slider
@@ -34,6 +36,27 @@ const defaultAppSettings = {
 const currentPlayerSettings = {...defaultPlayerSettings};
 
 setSettings(currentPlayerSettings);
+
+const updatePlayerSettings = (event, callback) => {
+
+    document.getElementById(event.target.name + "Display").value = event.target.value;
+
+    if (event.target.name === "groupLength")
+        { defaultAppSettings[event.target.name] = callback(event.target.value); }    
+    else
+        { defaultPlayerSettings[event.target.name] = callback(event.target.value); }
+    
+    
+
+    console.log(defaultPlayerSettings);
+}
+
+document.getElementById("wpm").addEventListener("input", event => updatePlayerSettings(event, parseInt));
+document.getElementById("eff").addEventListener("input", event => updatePlayerSettings(event, parseInt));
+document.getElementById("ews").addEventListener("input", event => updatePlayerSettings(event, parseInt));
+document.getElementById("freq").addEventListener("input", event => updatePlayerSettings(event, parseInt));
+document.getElementById("startDelay").addEventListener("input", event => updatePlayerSettings(event, parseInt));
+document.getElementById("groupLength").addEventListener("input", event => updatePlayerSettings(event, parseInt));
 
 // Fisher-Yates Shuffle: https://stackoverflow.com/a/12646864
 const shuffle = array => {
