@@ -108,14 +108,17 @@ const generateRandomText = (charactersArray, charactersToGenerate, distribution 
 }
 
 // create CW player
-const createCWPlayer = settings => {
+const createCWPlayer = () => {
 
-    // remove groupLength before passing into CW player
-    const {groupLength, ...playerSettings} = settings;
+    const cwPlayer = new jscw(defaultPlayerSettings);
 
-    const cwPlayer = new jscw(playerSettings);
-    cwPlayer.setText("one two three four five six seven eight nine ten");
-    cwPlayer.renderPlayer('cwPlayer', cwPlayer);    
+    if (defaultAppSettings.inputType === "text")
+        {
+            cwPlayer.setText(defaultAppSettings.textToConvert);
+        }
+    
+    cwPlayer.renderPlayer('cwPlayer', cwPlayer);
+    document.getElementById("cwPlayer").style.display = "block";
 }
 
 // add events for buttons
@@ -143,4 +146,5 @@ document.getElementById("characterWeights").addEventListener("input", event => u
 document.getElementById("totalCharacters").addEventListener("input", event => updateAppSettings(event, parseInt));
 document.getElementById("totalTime").addEventListener("input", event => updateAppSettings(event, parseInt));
 
-createCWPlayer(currentPlayerSettings);
+// create and display player
+document.getElementById("saveSettings").addEventListener("click", createCWPlayer);
