@@ -10,6 +10,9 @@ const setSettings = settings => {
             // set output display value
             document.getElementsByName(option + "Display")[0].value = settings[option];
         }
+    
+    if (defaultAppSettings.displayPlayer)
+        { togglePlayerDisplay(); }
 
 }
 
@@ -48,7 +51,8 @@ const updatePlayerSettings = (event, callback) => {
     else
         { defaultPlayerSettings[event.target.name] = callback(event.target.value); }
     
-    
+    if (defaultAppSettings.displayPlayer)
+        { togglePlayerDisplay(); }
 
     console.log(defaultPlayerSettings);
 }
@@ -155,7 +159,11 @@ document.getElementById("inputTypeGenerated").addEventListener("click", () => se
 
 // add events for input fields
 const updateAppSettings = (event, callback) => {
+    
     defaultAppSettings[event.target.name] = callback(event.target.value);
+    
+    if (defaultAppSettings.displayPlayer)
+        { togglePlayerDisplay(); }
 }
 
 document.getElementById("textToConvert").addEventListener("input", event => updateAppSettings(event, text => text));
