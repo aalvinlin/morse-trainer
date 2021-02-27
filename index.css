@@ -85,3 +85,16 @@
 input {
     padding: 0.5rem;
 }
+
+#cwPlayerContainer, #saveSettingsContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+#saveSettings {
+    line-height: 2rem;
+}
+
+#cwPlayer {
+    display: none;
+}
