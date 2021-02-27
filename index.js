@@ -30,7 +30,9 @@ const defaultAppSettings = {
     characterSelection: [],
     characterWeights: [],
     totalCharacters: 100,
-    totalTime: 30
+    totalTime: 30,
+
+    displayPlayer: false
 }
 
 const currentPlayerSettings = {...defaultPlayerSettings};
@@ -107,6 +109,22 @@ const generateRandomText = (charactersArray, charactersToGenerate, distribution 
     return selectedCharacters;
 }
 
+const togglePlayerDisplay = () => {
+
+    if (defaultAppSettings.displayPlayer)
+        {
+            document.getElementById("saveSettings").style.display = "block";
+            document.getElementById("cwPlayer").style.display = "none";
+        }
+    else
+        {
+            document.getElementById("saveSettings").style.display = "none";
+            document.getElementById("cwPlayer").style.display = "block";
+        }
+
+    defaultAppSettings.displayPlayer = !defaultAppSettings.displayPlayer;
+}
+
 // create CW player
 const createCWPlayer = () => {
 
@@ -117,8 +135,8 @@ const createCWPlayer = () => {
             cwPlayer.setText(defaultAppSettings.textToConvert);
         }
     
+    togglePlayerDisplay();
     cwPlayer.renderPlayer('cwPlayer', cwPlayer);
-    document.getElementById("cwPlayer").style.display = "block";
 }
 
 // add events for buttons
