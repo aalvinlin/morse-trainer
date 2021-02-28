@@ -155,6 +155,20 @@ const createCWPlayer = () => {
         {
             cwPlayer.setText(defaultAppSettings.textToConvert);
         }
+    else if (defaultAppSettings.inputType === "generated")
+        {
+            if (defaultAppSettings.totalCharacters)
+                {
+                    let charactersArray = defaultAppSettings.characterSelection;
+                    let charactersToGenerate = defaultAppSettings.totalCharacters;
+                    let distribution = defaultAppSettings.characterWeights;
+                    let groupLength = defaultAppSettings.groupLength;
+
+                    let generatedText = separateCharactersIntoGroups(generateRandomText(charactersArray, charactersToGenerate, distribution), groupLength);
+
+                    cwPlayer.setText(generatedText);
+                }
+        }
     
     togglePlayerDisplay();
     cwPlayer.renderPlayer('cwPlayer', cwPlayer);
