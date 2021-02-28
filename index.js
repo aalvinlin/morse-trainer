@@ -164,12 +164,16 @@ const updateAppSettings = (event, callback) => {
         { togglePlayerDisplay(); }
 }
 
-const processTextToConvert = (event, callback) => {
-    updateAppSettings(event, callback);
+const updateEstimatedTime = text => {
 
-    // update estimated time
-    let estimatedTime = formatTimeInWords(estimateTextLengthInSeconds(event.target.value, defaultPlayerSettings.eff, defaultPlayerSettings.ews));
+    let estimatedTime = formatTimeInWords(estimateTextLengthInSeconds(text, defaultPlayerSettings.eff, defaultPlayerSettings.ews));
     document.getElementById("textEstimatedLength").textContent = estimatedTime;
+}
+
+const processTextToConvert = (event, callback) => {
+    
+    updateAppSettings(event, callback);
+    updateEstimatedTime(event.target.value);
 }
 
 document.getElementById("textToConvert").addEventListener("input", event => processTextToConvert(event, text => text));
