@@ -111,6 +111,25 @@ const generateRandomText = (charactersArray, charactersToGenerate, distribution 
     return selectedCharacters;
 }
 
+const separateCharactersIntoGroups = (text, groupLength) => {
+    
+    let separatedText = "";
+
+    for (let i = 0; i < text.length; i += 1)
+        {
+            separatedText += text[i];
+
+            // add a space every (groupLength) characters, but not at end of text
+            if (i % groupLength === groupLength - 1 && i < text.length - 1)
+                {
+                    separatedText += " ";
+                }
+        }
+
+    return separatedText;
+
+}
+
 const togglePlayerDisplay = () => {
 
     if (defaultAppSettings.displayPlayer)
