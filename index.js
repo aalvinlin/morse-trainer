@@ -198,7 +198,7 @@ const getWordDotLength = word => {
 
             // add extra space between characters
             if (i < word.length - 1)
-                { dotLength += 1; }
+                { dotLength += 3; }
         }
     
     return dotLength;
@@ -217,7 +217,7 @@ const getTextDotLength = (text, extraWordSpacing = 0) => {
 
             // add extra word spacing if needed
             if (i < words.length - 1)
-                { textDotLength += extraWordSpacing; }
+                { textDotLength += 7 + extraWordSpacing; }
         }
 
     return textDotLength;
