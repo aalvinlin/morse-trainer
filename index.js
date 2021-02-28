@@ -231,7 +231,7 @@ const getTextDotLength = (text, extraWordSpacing = 0) => {
     return textDotLength;
 }
 
-const estimateTextLengthInSeconds = (text, effectiveSpeed = defaultAppSettings.eff, extraWordSpacing = 0) => {
+const estimateTextLengthInSeconds = (text, effectiveSpeed = defaultPlayerSettings.eff, extraWordSpacing = defaultPlayerSettings.ews) => {
 
     let textDotLength = getTextDotLength(text, extraWordSpacing);
     return Math.round(textDotLength / (50 * effectiveSpeed) * 60); // 50 * effectiveSpeed is characters per minute (PARIS standard)
