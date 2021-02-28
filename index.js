@@ -164,7 +164,15 @@ const updateAppSettings = (event, callback) => {
         { togglePlayerDisplay(); }
 }
 
-document.getElementById("textToConvert").addEventListener("input", event => updateAppSettings(event, text => text));
+const processTextToConvert = (event, callback) => {
+    updateAppSettings(event, callback);
+
+    // update estimated time
+    let estimatedTime = formatTimeInWords(estimateTextLengthInSeconds(event.target.value, defaultPlayerSettings.eff, defaultPlayerSettings.ews));
+    document.getElementById("textEstimatedLength").textContent = estimatedTime;
+}
+
+document.getElementById("textToConvert").addEventListener("input", event => processTextToConvert(event, text => text));
 document.getElementById("characterSelection").addEventListener("input", event => updateAppSettings(event, text => text.split("")));
 document.getElementById("characterWeights").addEventListener("input", event => updateAppSettings(event, text => text.split(" ").map(n => parseInt(n))));
 document.getElementById("totalCharacters").addEventListener("input", event => updateAppSettings(event, parseInt));
@@ -226,7 +234,7 @@ const getTextDotLength = (text, extraWordSpacing = 0) => {
 const estimateTextLengthInSeconds = (text, effectiveSpeed = defaultAppSettings.eff, extraWordSpacing = 0) => {
 
     let textDotLength = getTextDotLength(text, extraWordSpacing);
-    return Math.round(50 * effectiveSpeed / textDotLength * 60); // 50 * effectiveSpeed is characters per minute (PARIS standard)
+    return Math.round(textDotLength / (50 * effectiveSpeed) * 60); // 50 * effectiveSpeed is characters per minute (PARIS standard)
 }
 
 const formatTimeInWords = seconds => {
