@@ -53,8 +53,6 @@ const updatePlayerSettings = (event, callback) => {
     
     if (defaultAppSettings.displayPlayer)
         { togglePlayerDisplay(); }
-
-    console.log(defaultPlayerSettings);
 }
 
 document.getElementById("wpm").addEventListener("input", event => updatePlayerSettings(event, parseInt));
@@ -174,3 +172,34 @@ document.getElementById("totalTime").addEventListener("input", event => updateAp
 
 // create and display player
 document.getElementById("saveSettings").addEventListener("click", createCWPlayer);
+
+const characterDotLengths = {
+    "0": 19, "1": 17, "2": 15, "3": 13, "4": 11,
+    "5": 9, "6": 11, "7": 13, "8": 15, "9": 17,
+    "a": 5, "b": 9, "c": 11, "d": 7, "e": 1,
+    "f": 9, "g": 9, "h": 7, "i": 3, "j": 13,
+    "k": 9, "l": 9, "m": 7, "n": 5, "o": 11,
+    "p": 11, "q": 13, "r": 7, "s": 5, "t": 3,
+    "u": 7, "v": 9, "w": 9, "x": 11, "y": 13,
+    "z": 11, "/": 13, "+": 13, "=": 13, "?": 15,
+    ".": 17, ",": 19, ":": 17, "(": 15, ")": 19,
+    "@": 17, "-": 15, '"': 15, "!": 13, "$": 17,
+    "'": 19, "`": 23, ";": 17
+}
+
+const getWordDotLength = word => {
+
+    let dotLength = 0;
+
+    for (let i = 0; i < word.length; i += 1)
+        {
+            if (characterDotLengths[word[i]])
+                { dotLength += characterDotLengths[word[i]]; }
+
+            // add extra space between characters
+            if (i < word.length - 1)
+                { dotLength += 1; }
+        }
+    
+    return dotLength;
+}
