@@ -203,3 +203,22 @@ const getWordDotLength = word => {
     
     return dotLength;
 }
+
+const getTextDotLength = (text, extraWordSpacing = 0) => {
+
+    let words = text.split(" ");
+    let textDotLength = 0;
+
+    for (let i = 0; i < words.length; i += 1)
+        {
+            let currentWord = words[i];
+
+            textDotLength += getWordDotLength(currentWord);
+
+            // add extra word spacing if needed
+            if (i < words.length - 1)
+                { textDotLength += extraWordSpacing; }
+        }
+
+    return textDotLength;
+}
