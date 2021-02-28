@@ -150,6 +150,10 @@ const setInputType = selection => {
     document.getElementsByClassName("input-generated")[0].style.display = "none";
 
     document.getElementsByClassName("input-" + selection)[0].style.display = "flex";
+
+    // hide player
+    if (defaultAppSettings.displayPlayer)
+        { togglePlayerDisplay(); }
 }
 
 document.getElementById("inputTypeText").addEventListener("click", () => setInputType("text"));
@@ -171,7 +175,7 @@ const updateEstimatedTime = text => {
 }
 
 const processTextToConvert = (event, callback) => {
-    
+
     updateAppSettings(event, callback);
     updateEstimatedTime(event.target.value);
 }
