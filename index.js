@@ -222,3 +222,36 @@ const getTextDotLength = (text, extraWordSpacing = 0) => {
 
     return textDotLength;
 }
+
+const estimateTextLengthInSeconds = (text, effectiveSpeed = defaultAppSettings.eff, extraWordSpacing = 0) => {
+
+    let textDotLength = getTextDotLength(text, extraWordSpacing);
+    return Math.round(50 * effectiveSpeed / textDotLength * 60); // 50 * effectiveSpeed is characters per minute (PARIS standard)
+}
+
+const formatTimeInWords = seconds => {
+
+    if (seconds < 0)
+        { return ""; }
+
+    let minutes = Math.floor(seconds / 60);
+    let remainingSeconds = seconds - minutes * 60;
+
+    let minuteText = "";
+
+    // display minutes if more than 0
+    if (minutes > 0)
+        { minuteText = minutes + " min"; }
+
+    // add space if there are seconds left
+    if (remainingSeconds)
+        { minuteText += " "; }
+
+    let secondText = "";
+
+    // display seconds if more than 0
+    if (remainingSeconds > 0)
+        { secondText = remainingSeconds + " sec"; }
+
+    return minuteText + secondText;
+}
