@@ -70,6 +70,11 @@
     height: 20vh;
 }
 
+/* hide when page is initially loaded. Use flex settings above when displayed. */
+.input-generated {
+    display: none;
+}
+
 .input-generated-row {
     display: flex;
     justify-content: space-between;
