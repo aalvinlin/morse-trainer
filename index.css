@@ -82,10 +82,6 @@
     margin: 1rem auto;
 }
 
-input {
-    padding: 0.5rem;
-}
-
 #cwPlayerContainer, #saveSettingsContainer, #regenerateSettingsContainer {
     display: flex;
     flex-direction: column;
