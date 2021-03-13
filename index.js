@@ -221,6 +221,7 @@ document.getElementById("totalTime").addEventListener("input", event => updateAp
 
 // create and display player
 document.getElementById("saveSettings").addEventListener("click", createCWPlayer);
+document.getElementById("regenerateSettingsContainer").addEventListener("click", createCWPlayer);
 
 const characterDotLengths = {
     "0": 19, "1": 17, "2": 15, "3": 13, "4": 11,
