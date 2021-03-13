@@ -147,7 +147,7 @@ const togglePlayerDisplay = () => {
 }
 
 // create CW player
-const createCWPlayer = () => {
+const createCWPlayer = event => {
 
     const cwPlayer = new jscw(defaultPlayerSettings);
 
@@ -170,7 +170,10 @@ const createCWPlayer = () => {
                 }
         }
     
-    togglePlayerDisplay();
+    // toggle player display if not called from regenerateSettings
+    if (event.target.id !== "regenerateSettings")
+        { togglePlayerDisplay(); }
+        
     cwPlayer.renderPlayer('cwPlayer', cwPlayer);
 }
 
