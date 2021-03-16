@@ -99,3 +99,7 @@
 #cwPlayer {
     display: none;
 }
+
+.hidden {
+    display: none;
+}

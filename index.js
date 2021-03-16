@@ -49,7 +49,10 @@ const updatePlayerSettings = (event, callback) => {
     if (event.target.name === "groupLength")
         { defaultAppSettings[event.target.name] = callback(event.target.value); }    
     else
-        { defaultPlayerSettings[event.target.name] = callback(event.target.value); }
+        {
+            document.getElementById("regenerateSettingsContainer").classList.add("hidden");
+            defaultPlayerSettings[event.target.name] = callback(event.target.value);
+        }
     
     if (defaultAppSettings.displayPlayer)
         { togglePlayerDisplay(); }
@@ -173,7 +176,7 @@ const createCWPlayer = event => {
     // toggle player display if not called from regenerateSettings
     if (event.target.id !== "regenerateSettings")
         { togglePlayerDisplay(); }
-        
+
     cwPlayer.renderPlayer('cwPlayer', cwPlayer);
 }
 
