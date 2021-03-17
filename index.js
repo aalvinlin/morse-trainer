@@ -47,7 +47,10 @@ const updatePlayerSettings = (event, callback) => {
     document.getElementById(event.target.name + "Display").value = event.target.value;
 
     if (event.target.name === "groupLength")
-        { defaultAppSettings[event.target.name] = callback(event.target.value); }    
+        {
+            document.getElementById("regenerateSettingsContainer").classList.remove("hidden");
+            defaultAppSettings[event.target.name] = callback(event.target.value);
+        }
     else
         {
             document.getElementById("regenerateSettingsContainer").classList.add("hidden");
