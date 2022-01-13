@@ -117,6 +117,13 @@ const generateRandomText = (charactersArray, charactersToGenerate, distribution 
     return selectedCharacters;
 }
 
+const selectNWordsAtRandom = (choices, n) => {
+
+    let selectedWords = [];
+
+    return selectedWords;
+}
+
 const separateCharactersIntoGroups = (text, groupLength) => {
     
     let separatedText = "";
