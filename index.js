@@ -121,6 +121,12 @@ const selectNWordsAtRandom = (choices, n) => {
 
     let selectedWords = [];
 
+    for (let i = 0; i < n; i += 1)
+        {
+            const choice = choices[Math.floor(Math.random() * choices.length)];
+            selectedWords.push(choice);
+        }
+
     return selectedWords;
 }
 
