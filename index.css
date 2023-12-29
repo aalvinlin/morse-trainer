@@ -1,5 +1,8 @@
 * {
     font-family: Verdana, Arial, Helvetica, sans-serif;
+
+    background-color: #333333;
+    color: #CCCCCC;
 }
 
 #content {
@@ -22,7 +25,9 @@
     margin: 1rem auto;
 }
 
-.input-row label, .input-row input, .input-row output {
+.input-row label,
+.input-row input,
+.input-row output {
     width: 30%;
 }
 
@@ -42,7 +47,7 @@
 /* div containing the two buttons to toggle input type */
 .input-type-selection {
     width: 50vw;
-    
+
     display: flex;
     justify-content: space-around;
 }
@@ -51,7 +56,8 @@
     margin: 2rem auto;
 }
 
-.input-type-selection button, .input-settings-container button {
+.input-type-selection button,
+.input-settings-container button {
     line-height: 2rem;
 }
 
@@ -64,10 +70,10 @@
     min-height: 10vh;
 }
 
-.input-text, .input-generated {
+.input-text,
+.input-generated {
     display: flex;
     flex-direction: column;
-    height: 20vh;
 }
 
 /* hide when page is initially loaded. Use flex settings above when displayed. */
@@ -87,12 +93,15 @@
     margin: 1rem auto;
 }
 
-#cwPlayerContainer, #saveSettingsContainer, #regenerateSettingsContainer {
+#cwPlayerContainer,
+#saveSettingsContainer,
+#regenerateSettingsContainer {
     display: flex;
     flex-direction: column;
 }
 
-#saveSettings, #regenerateSettings {
+#saveSettings,
+#regenerateSettings {
     line-height: 2rem;
 }
 
