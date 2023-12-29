@@ -19,29 +19,30 @@
 
 .input-row {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
 
-    width: 50vw;
+    width: 80vw;
     margin: 1rem auto;
 }
 
-.input-row label,
-.input-row input,
 .input-row output {
-    width: 30%;
+    display: inline-block;
+    text-align: center;
+    width: 3rem;
 }
 
 .input-row label {
     text-align: right;
+    width: 30%;
 }
 
-.input-row input {
-    width: 50%;
-}
+.output-display {
+    width: 30%;
 
-.input-row output {
-    width: 10%;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* div containing the two buttons to toggle input type */

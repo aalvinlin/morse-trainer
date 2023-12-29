@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
     <script src="jscwlib.js" defer></script>
     <script src="index.js" defer></script>
 </head>
+
 <body>
     <div id="content">
 
@@ -18,38 +20,50 @@
 
                 <div class="input-row">
                     <label for="wpm">Character WPM:</label>
-                    <output name="wpmDisplay" id="wpmDisplay" for="wpm"></output>
-                    <input name="wpm" id="wpm" type="range" min="10" max="40" step="1">
+                    <div class="output-display">
+                        <output name="wpmDisplay" id="wpmDisplay" for="wpm"></output>
+                        <input name="wpm" id="wpm" type="range" min="10" max="40" step="1">
+                    </div>
                 </div>
 
                 <div class="input-row">
                     <label for="eff">Effective WPM:</label>
-                    <output name="effDisplay" id="effDisplay" for="eff"></output>
-                    <input name="eff" id="eff" type="range" min="10" max="40" step="1">
+                    <div class="output-display">
+                        <output name="effDisplay" id="effDisplay" for="eff"></output>
+                        <input name="eff" id="eff" type="range" min="10" max="40" step="1">
+                    </div>
                 </div>
 
                 <div class="input-row">
                     <label for="ews">Extra Word Spacing:</label>
-                    <output name="ewsDisplay" id="ewsDisplay" for="ews"></output>
-                    <input name="ews" id="ews" type="range" min="0" max="5" step="1">
+                    <div class="output-display">
+                        <output name="ewsDisplay" id="ewsDisplay" for="ews"></output>
+                        <input name="ews" id="ews" type="range" min="0" max="5" step="1">
+                    </div>
                 </div>
 
                 <div class="input-row">
                     <label for="freq">Frequency (Hz):</label>
-                    <output name="freqDisplay" id="freqDisplay" for="freq"></output>
-                    <input name="freq" id="freq" type="range" min="200" max="1000" step="10">
+                    <div class="output-display">
+                        <output name="freqDisplay" id="freqDisplay" for="freq"></output>
+                        <input name="freq" id="freq" type="range" min="200" max="1000" step="10">
+                    </div>
                 </div>
 
                 <div class="input-row">
                     <label for="startDelay">Start Delay (seconds):</label>
-                    <output name="startDelayDisplay" id="startDelayDisplay" for="startDelay"></output>
-                    <input name="startDelay" id="startDelay" type="range" min="0" max="5" step="1">
+                    <div class="output-display">
+                        <output name="startDelayDisplay" id="startDelayDisplay" for="startDelay"></output>
+                        <input name="startDelay" id="startDelay" type="range" min="0" max="5" step="1">
+                    </div>
                 </div>
 
                 <div class="input-row">
                     <label for="groupLength">Group Length:</label>
-                    <output name="groupLengthDisplay" id="groupLengthDisplay" for="groupLength"></output>
-                    <input name="groupLength" id="groupLength" type="range" min="1" max="7" step="1">
+                    <div class="output-display">
+                        <output name="groupLengthDisplay" id="groupLengthDisplay" for="groupLength"></output>
+                        <input name="groupLength" id="groupLength" type="range" min="1" max="7" step="1">
+                    </div>
                 </div>
 
             </form>
@@ -90,7 +104,7 @@
                         <input name="characterWeights" id="characterWeights" type="text"></input>
                     </div>
                 </div>
-                
+
                 <div class="input-generated-row">
                     <div class="input-option">
                         <button name="totalCharactersButton" id="totalCharactersButton">Total characters</button>
@@ -116,6 +130,7 @@
             </div>
         </div>
 
-    </div>   
+    </div>
 </body>
+
 </html>
