@@ -52,13 +52,20 @@
         flex-wrap: wrap;
     }
 
-    .input-row label,
-    .input-type-selection {
+    .input-row label {
         width: 100%;
+    }
+
+    .output-display {
+        width: 80%;
     }
 
     .input-row label {
         text-align: center;
+    }
+
+    .input-row input {
+        width: 80vw;
     }
 }
 
