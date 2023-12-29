@@ -29,12 +29,14 @@
 .input-row output {
     display: inline-block;
     text-align: center;
-    width: 3rem;
+    min-width: 2rem;
+    margin: 0 1rem;
 }
 
 .input-row label {
     text-align: right;
     width: 30%;
+    margin: 0.5rem 0;
 }
 
 .output-display {
@@ -43,6 +45,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media (max-width: 1024px) {
+    .input-row {
+        flex-wrap: wrap;
+    }
+
+    .input-row label,
+    .input-type-selection {
+        width: 100%;
+    }
+
+    .input-row label {
+        text-align: center;
+    }
 }
 
 /* div containing the two buttons to toggle input type */
