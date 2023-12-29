@@ -95,6 +95,10 @@
     min-height: 10vh;
 }
 
+.input-settings-container input {
+    background-color: #666666;
+}
+
 .input-text,
 .input-generated {
     display: flex;
